@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="KivySupportCutout">
+        <item name="android:windowNoTitle">true</item>
+        <!-- Display cutout is an area on some devices that extends into the display surface -->
+        
+    </style>
+    <string name="app_name">Bomb Defusal</string>
+    <string name="private_version">82f1313c9d4b534a95255b2f8d771460d5718688</string>
+    <string name="presplash_color">#000000</string>
+    <string name="urlScheme">kivy</string>
+</resources>

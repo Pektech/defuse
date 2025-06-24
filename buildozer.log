@@ -1,0 +1,486 @@
+# Check configuration tokens
+# Ensure build layout
+# Check configuration tokens
+# Preparing build
+# Check requirements for android
+# Search for Git (git)
+#  -> found at /usr/bin/git
+# Search for Cython (cython)
+#  -> found at /home/rleddy/.local/bin/cython
+# Search for Java compiler (javac)
+#  -> found at /usr/lib/jvm/java-21-openjdk/bin/javac
+# Search for Java keytool (keytool)
+#  -> found at /usr/lib/jvm/java-21-openjdk/bin/keytool
+# Install platform
+# Run ['git', 'config', '--get', 'remote.origin.url']
+# Cwd /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android
+https://github.com/kivy/python-for-android.git
+# Run ['git', 'branch', '-vv']
+# Cwd /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android
+* master 957a3e5f [origin/master] Merge pull request #2959 from kivy/release-2024.01.21
+# Run ['/usr/bin/python3', '-m', 'pip', 'install', '-q', 'appdirs', 'colorama>=0.3.3', 'jinja2', 'sh>=1.10, <2.0; sys_platform!="win32"', 'build', 'toml', 'packaging', 'setuptools']
+# Cwd None
+# Apache ANT found at /home/rleddy/.buildozer/android/platform/apache-ant-1.9.4
+# Android SDK found at /home/rleddy/.buildozer/android/platform/android-sdk
+# Recommended android's NDK version by p4a is: 25b
+# Android NDK found at /home/rleddy/.buildozer/android/platform/android-ndk-r25b
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'aab', '-h', '--color=always', '--storage-dir=/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
+# Cwd /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+usage: toolchain.py aab [-h] [--debug] [--color {always,never,auto}]
+                        [--sdk-dir SDK_DIR] [--ndk-dir NDK_DIR]
+                        [--android-api ANDROID_API]
+                        [--ndk-version NDK_VERSION] [--ndk-api NDK_API]
+                        [--symlink-bootstrap-files]
+                        [--storage-dir STORAGE_DIR] [--arch ARCH]
+                        [--dist-name DIST_NAME] [--requirements REQUIREMENTS]
+                        [--recipe-blacklist RECIPE_BLACKLIST]
+                        [--blacklist-requirements BLACKLIST_REQUIREMENTS]
+                        [--bootstrap BOOTSTRAP] [--hook HOOK] [--force-build]
+                        [--no-force-build] [--require-perfect-match]
+                        [--no-require-perfect-match] [--allow-replace-dist]
+                        [--no-allow-replace-dist]
+                        [--local-recipes LOCAL_RECIPES]
+                        [--activity-class-name ACTIVITY_CLASS_NAME]
+                        [--service-class-name SERVICE_CLASS_NAME]
+                        [--java-build-tool {auto,ant,gradle}] [--copy-libs]
+                        [--no-copy-libs] [--add-asset ASSETS]
+                        [--add-resource RESOURCES] [--private PRIVATE]
+                        [--use-setup-py] [--ignore-setup-py] [--release]
+                        [--with-debug-symbols] [--keystore KEYSTORE]
+                        [--signkey SIGNKEY] [--keystorepw KEYSTOREPW]
+                        [--signkeypw SIGNKEYPW]
+
+options:
+  -h, --help            show this help message and exit
+  --debug               Display debug output and all build info
+  --color {always,never,auto}
+                        Enable or disable color output (default enabled on
+                        tty)
+  --sdk-dir, --sdk_dir SDK_DIR
+                        The filepath where the Android SDK is installed
+  --ndk-dir, --ndk_dir NDK_DIR
+                        The filepath where the Android NDK is installed
+  --android-api, --android_api ANDROID_API
+                        The Android API level to build against defaults to 33
+                        if not specified.
+  --ndk-version, --ndk_version NDK_VERSION
+                        DEPRECATED: the NDK version is now found automatically
+                        or not at all.
+  --ndk-api NDK_API     The Android API level to compile against. This should
+                        be your *minimal supported* API, not normally the same
+                        as your --android-api. Defaults to min(ANDROID_API,
+                        21) if not specified.
+  --symlink-bootstrap-files, --ssymlink_bootstrap_files
+                        If True, symlinks the bootstrap files creation. This
+                        is useful for development only, it could also cause
+                        weird problems.
+  --storage-dir STORAGE_DIR
+                        Primary storage directory for downloads and builds
+                        (default: /home/rleddy/.local/share/python-for-
+                        android)
+  --arch ARCH           The archs to build for.
+  --dist-name, --dist_name DIST_NAME
+                        The name of the distribution to use or create
+  --requirements REQUIREMENTS
+                        Dependencies of your app, should be recipe names or
+                        Python modules. NOT NECESSARY if you are using Python
+                        3 with --use-setup-py
+  --recipe-blacklist RECIPE_BLACKLIST
+                        Blacklist an internal recipe from use. Allows
+                        disabling Python 3 core modules to save size
+  --blacklist-requirements BLACKLIST_REQUIREMENTS
+                        Blacklist an internal recipe from use. Allows
+                        disabling Python 3 core modules to save size
+  --bootstrap BOOTSTRAP
+                        The bootstrap to build with. Leave unset to choose
+                        automatically.
+  --hook HOOK           Filename to a module that contains python-for-android
+                        hooks
+  --local-recipes, --local_recipes LOCAL_RECIPES
+                        Directory to look for local recipes
+  --activity-class-name ACTIVITY_CLASS_NAME
+                        The full java class name of the main activity
+  --service-class-name SERVICE_CLASS_NAME
+                        Full java package name of the PythonService class
+  --java-build-tool {auto,ant,gradle}
+                        The java build tool to use when packaging the APK,
+                        defaults to automatically selecting an appropriate
+                        tool.
+  --add-asset ASSETS    Put this in the assets folder in the apk.
+  --add-resource RESOURCES
+                        Put this in the res folder in the apk.
+  --private PRIVATE     the directory with the app source code files
+                        (containing your main.py entrypoint)
+  --use-setup-py        Process the setup.py of a project if present.
+                        (Experimental!
+  --ignore-setup-py     Don't run the setup.py of a project if present. This
+                        may be required if the setup.py is not designed to
+                        work inside p4a (e.g. by installing dependencies that
+                        won't work or aren't desired on Android
+  --release             Build your app as a non-debug release build. (Disables
+                        gdb debugging among other things)
+  --with-debug-symbols  Will keep debug symbols from `.so` files.
+  --keystore KEYSTORE   Keystore for JAR signing key, will use jarsigner
+                        default if not specified (release build only)
+  --signkey SIGNKEY     Key alias to sign PARSER_APK. with (release build
+                        only)
+  --keystorepw KEYSTOREPW
+                        Password for keystore
+  --signkeypw SIGNKEYPW
+                        Password for key alias
+
+  Whether to force compilation of a new distribution
+
+  --force-build
+  --no-force-build      (this is the default)
+  --require-perfect-match
+  --no-require-perfect-match
+                        (this is the default)
+  --allow-replace-dist  (this is the default)
+  --no-allow-replace-dist
+  --copy-libs
+  --no-copy-libs        (this is the default)
+# Check application requirements
+# Compile platform
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=bombdefusal', '--bootstrap=sdl2', '--requirements=python3==3.10.12,kivy', '--arch=arm64-v8a', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
+# Cwd /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[1m[INFO][0m:    Recipe python3: version "3.10.12" requested
+[1m[INFO][0m:    Will compile for the following archs: arm64-v8a, armeabi-v7a
+[1m[INFO][0m:    Found Android API target in $ANDROIDAPI: 31
+[1m[INFO][0m:    Available Android APIs are (31)
+[1m[INFO][0m:    Requested API target 31 is available, continuing.
+[1m[INFO][0m:    Found NDK dir in $ANDROIDNDK: /home/rleddy/.buildozer/android/platform/android-ndk-r25b
+[1m[INFO][0m:    Found NDK version 25b
+[1m[INFO][0m:    Getting NDK API version (i.e. minimum supported API) from user argument
+[1m[INFO][0m:    ccache is missing, the build will not be optimized in the future.
+/home/rleddy/PycharmProjects/bomb1/.venv/bin/python3: No module named cython
+[1m[31m[WARNING][39m[0m: Cython for python3 missing. If you are building for  a python 3 target (which is the default) then THINGS WILL BREAK.
+[1m[90m[DEBUG][39m[0m:   All possible dists: []
+[1m[90m[DEBUG][39m[0m:   Dist matching name and arch: []
+[1m[90m[DEBUG][39m[0m:   Dist matching ndk_api and recipe: []
+[1m[INFO][0m:    No existing dists meet the given requirements!
+[1m[90m[DEBUG][39m[0m:   Remove directory and subdirectory /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/bombdefusal
+[1m[INFO][0m:    [1m[94mNo dist exists that meets your requirements, so one will be built.[0m
+[1m[INFO][0m:    Found a single valid recipe set: ['hostpython3', 'libffi', 'openssl', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'setuptools', 'six', 'pyjnius', 'android', 'kivy']
+[1m[INFO][0m:    The selected bootstrap is sdl2
+[1m[INFO][0m:    [1m[32m# Creating dist with sdl2 bootstrap[0m[39m
+[1m[INFO][0m:    [1m[94mDist will have name bombdefusal and requirements (python3, kivy)[0m
+[1m[INFO][0m:    Dist contains the following requirements as recipes: ['hostpython3', 'libffi', 'openssl', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'setuptools', 'six', 'pyjnius', 'android', 'kivy']
+[1m[INFO][0m:    Dist will also contain modules (idna, chardet, urllib3, requests, certifi) installed from pip
+[1m[INFO][0m:    Dist will be build in mode debug
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2[39m
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[90m[DEBUG][39m[0m:   Create directory /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/bombdefusal
+[1m[INFO][0m:    [1m[94mRecipe build order is ['hostpython3', 'libffi', 'openssl', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'setuptools', 'six', 'pyjnius', 'android', 'kivy'][0m
+[1m[INFO][0m:    [1m[94mThe requirements (certifi, chardet, idna, requests, urllib3) were not found as recipes, they will be installed with pip.[0m
+[1m[INFO][0m:    [1m[32m# Downloading recipes [0m[39m
+[1m[INFO][0m:    [1m[32mDownloading hostpython3[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/hostpython3[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz[0m
+[1m[90m[DEBUG][39m[0m:   	Python-3.11.5.tgz
+[1m[INFO][0m:    hostpython3 download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading libffi[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/libffi[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libffi/libffi/archive/v3.4.2.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	v3.4.2.tar.gz
+[1m[INFO][0m:    libffi download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading openssl[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/openssl[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.openssl.org/source/openssl-1.1.1w.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	openssl-1.1.1w.tar.gz
+[1m[INFO][0m:    openssl download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading sdl2_image[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2_image[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.0/SDL2_image-2.8.0.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2_image-2.8.0.tar.gz
+[1m[INFO][0m:    sdl2_image download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading sdl2_mixer[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2_mixer[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2_mixer-2.6.3.tar.gz
+[1m[INFO][0m:    sdl2_mixer download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading sdl2_ttf[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2_ttf[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2_ttf-2.20.2.tar.gz
+[1m[INFO][0m:    sdl2_ttf download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading sqlite3[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sqlite3[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.sqlite.org/2021/sqlite-amalgamation-3350500.zip[0m
+[1m[90m[DEBUG][39m[0m:   	sqlite-amalgamation-3350500.zip
+[1m[INFO][0m:    sqlite3 download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading python3[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/python3[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz[0m
+[1m[90m[DEBUG][39m[0m:   	Python-3.10.12.tgz
+[1m[INFO][0m:    python3 download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading sdl2[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-2.28.5.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2-2.28.5.tar.gz
+[1m[INFO][0m:    sdl2 download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading setuptools[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/setuptools[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://pypi.python.org/packages/source/s/setuptools/setuptools-51.3.3.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	setuptools-51.3.3.tar.gz
+[1m[INFO][0m:    setuptools download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading six[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/six[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://pypi.python.org/packages/source/s/six/six-1.15.0.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	six-1.15.0.tar.gz
+[1m[INFO][0m:    six download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading pyjnius[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/pyjnius[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/kivy/pyjnius/archive/1.6.1.zip[0m
+[1m[90m[DEBUG][39m[0m:   	1.6.1.zip
+[1m[INFO][0m:    pyjnius download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mDownloading android[0m[39m
+[1m[INFO][0m:    Skipping android download as no URL is set
+[1m[INFO][0m:    [1m[32mDownloading kivy[0m[39m
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/kivy[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/kivy/kivy/archive/2.3.0.zip[0m
+[1m[90m[DEBUG][39m[0m:   	2.3.0.zip
+[1m[INFO][0m:    kivy download already cached, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32m# Building all recipes for arch arm64-v8a[0m[39m
+[1m[INFO][0m:    [1m[32m# Unpacking recipes[0m[39m
+[1m[INFO][0m:    [1m[32mUnpacking hostpython3 for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz[0m
+[1m[90m[DEBUG][39m[0m:   	Python-3.11.5.tgz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop[39m
+[1m[INFO][0m:    hostpython3 is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking libffi for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libffi/libffi/archive/v3.4.2.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	v3.4.2.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/libffi/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    libffi is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking openssl for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.openssl.org/source/openssl-1.1.1w.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	openssl-1.1.1w.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/openssl/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    openssl is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking sdl2_image for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.0/SDL2_image-2.8.0.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2_image-2.8.0.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni[39m
+[1m[INFO][0m:    sdl2_image is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking sdl2_mixer for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2_mixer-2.6.3.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni[39m
+[1m[INFO][0m:    sdl2_mixer is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking sdl2_ttf for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2_ttf-2.20.2.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni[39m
+[1m[INFO][0m:    sdl2_ttf is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking sqlite3 for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.sqlite.org/2021/sqlite-amalgamation-3350500.zip[0m
+[1m[90m[DEBUG][39m[0m:   	sqlite-amalgamation-3350500.zip
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/sqlite3/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    sqlite3 is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking python3 for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz[0m
+[1m[90m[DEBUG][39m[0m:   	Python-3.10.12.tgz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/python3/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    python3 is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking sdl2 for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-2.28.5.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	SDL2-2.28.5.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni[39m
+[1m[INFO][0m:    sdl2 is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking setuptools for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://pypi.python.org/packages/source/s/setuptools/setuptools-51.3.3.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	setuptools-51.3.3.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/setuptools/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    setuptools is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking six for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://pypi.python.org/packages/source/s/six/six-1.15.0.tar.gz[0m
+[1m[90m[DEBUG][39m[0m:   	six-1.15.0.tar.gz
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/six/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    six is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32mUnpacking pyjnius for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/kivy/pyjnius/archive/1.6.1.zip[0m
+[1m[90m[DEBUG][39m[0m:   	1.6.1.zip
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pyjnius-sdl2/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    pyjnius is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[90m[DEBUG][39m[0m:   Remove directory and subdirectory /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/android-sdl2/arm64-v8a__ndk_target_21/android
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running cp -a /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/recipes/android/src /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/android-sdl2/arm64-v8a__ndk_target_21/android[0m
+[1m[INFO][0m:    [1m[32mUnpacking kivy for arm64-v8a[0m[39m
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running basename https://github.com/kivy/kivy/archive/2.3.0.zip[0m
+[1m[90m[DEBUG][39m[0m:   	2.3.0.zip
+[1m[INFO][0m:    [36m-> directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/kivy/arm64-v8a__ndk_target_21[39m
+[1m[INFO][0m:    kivy is already unpacked, skipping
+[1m[INFO][0m:    [36m<- directory context /home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android[39m
+[1m[INFO][0m:    [1m[32m# Prebuilding recipes[0m[39m
+[1m[INFO][0m:    [1m[32mPrebuilding hostpython3 for arm64-v8a[0m[39m
+[1m[INFO][0m:    hostpython3 has no prebuild_arm64_v8a, skipping
+[1m[INFO][0m:    [1m[32mApplying patches for hostpython3[arm64-v8a][0m[39m
+[1m[INFO][0m:    Applying patch patches/pyconfig_detection.patch
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1256, in <module>
+    main()
+    ~~~~^^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/entrypoints.py", line 18, in main
+    ToolchainCL()
+    ~~~~~~~~~~~^^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 685, in __init__
+    getattr(self, command)(args)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 104, in wrapper_func
+    build_dist_from_args(ctx, dist, args)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 163, in build_dist_from_args
+    build_recipes(build_order, python_modules, ctx,
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                  getattr(args, "private", None),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+                  ),
+                  ^^
+                 )
+                 ^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/build.py", line 497, in build_recipes
+    recipe.apply_patches(arch)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 534, in apply_patches
+    self.apply_patch(
+    ~~~~~~~~~~~~~~~~^
+            patch.format(version=self.version, arch=arch.arch),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            arch.arch, build_dir=build_dir)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 253, in apply_patch
+    shprint(sh.patch, "-t", "-d", build_dir, "-p1",
+            ^^^^^^^^
+  File "/home/rleddy/.local/lib/python3.13/site-packages/sh.py", line 3548, in __getattr__
+    return self.__env[name]
+           ~~~~~~~~~~^^^^^^
+  File "/home/rleddy/.local/lib/python3.13/site-packages/sh.py", line 3330, in __getitem__
+    raise CommandNotFound(k)
+sh.CommandNotFound: patch
+# Command failed: ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=bombdefusal', '--bootstrap=sdl2', '--requirements=python3==3.10.12,kivy', '--arch=arm64-v8a', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/rleddy/PycharmProjects/bomb1/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
+# ENVIRONMENT:
+#     SHELL = '/bin/bash'
+#     IMSETTINGS_INTEGRATE_DESKTOP = 'yes'
+#     SESSION_MANAGER = 'local/unix:@/tmp/.ICE-unix/2341,unix/unix:/tmp/.ICE-unix/2341'
+#     WINDOWID = '94341225184128'
+#     COLORTERM = 'truecolor'
+#     XDG_CONFIG_DIRS = '/home/rleddy/.config/kdedefaults:/etc/xdg:/usr/share/kde-settings/kde-profile/default/xdg'
+#     XDG_SESSION_PATH = '/org/freedesktop/DisplayManager/Session1'
+#     HISTCONTROL = 'ignoredups'
+#     XDG_MENU_PREFIX = 'plasma-'
+#     HOSTNAME = 'syn-2603-7080-0400-786a-84f9-da5a-9ae7-a69c.res6.spectrum.com'
+#     HISTSIZE = '1000'
+#     ICEAUTHORITY = '/run/user/1000/iceauth_mMOchr'
+#     LANGUAGE = ''
+#     SSH_AUTH_SOCK = '/run/user/1000/ssh-agent.socket'
+#     SHELL_SESSION_ID = 'bc9b4ebf221b440c87f9a34f814ad213'
+#     MEMORY_PRESSURE_WRITE = 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+#     XMODIFIERS = '@im=none'
+#     DESKTOP_SESSION = 'plasma'
+#     GTK_RC_FILES = '/etc/gtk/gtkrc:/home/rleddy/.gtkrc:/home/rleddy/.config/gtkrc'
+#     GDK_CORE_DEVICE_EVENTS = '1'
+#     GPG_TTY = '/dev/pts/1'
+#     EDITOR = '/usr/bin/nano'
+#     XDG_SEAT = 'seat0'
+#     PWD = '/home/rleddy/PycharmProjects/bomb1'
+#     XDG_SESSION_DESKTOP = 'KDE'
+#     LOGNAME = 'rleddy'
+#     XDG_SESSION_TYPE = 'wayland'
+#     SYSTEMD_EXEC_PID = '2377'
+#     XAUTHORITY = '/run/user/1000/xauth_OcFrfc'
+#     XKB_DEFAULT_MODEL = 'pc105'
+#     GTK2_RC_FILES = '/home/rleddy/.gtkrc-2.0-kde4'
+#     HOME = '/home/rleddy'
+#     SSH_ASKPASS = '/usr/bin/ksshaskpass'
+#     LANG = 'en_US.UTF-8'
+#     LS_COLORS = 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:'
+#     XDG_CURRENT_DESKTOP = 'KDE'
+#     KONSOLE_DBUS_SERVICE = ':1.177'
+#     VIRTUAL_ENV = '/home/rleddy/PycharmProjects/bomb1/.venv'
+#     MEMORY_PRESSURE_WATCH = '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'
+#     WAYLAND_DISPLAY = 'wayland-0'
+#     KONSOLE_DBUS_SESSION = '/Sessions/1'
+#     PROFILEHOME = ''
+#     XDG_SEAT_PATH = '/org/freedesktop/DisplayManager/Seat0'
+#     INVOCATION_ID = '0e0dd26a98674e74a8f0099bad7f4210'
+#     KONSOLE_VERSION = '250402'
+#     MANAGERPID = '1871'
+#     IMSETTINGS_MODULE = 'none'
+#     KDE_SESSION_UID = '1000'
+#     MOZ_GMP_PATH = '/usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed'
+#     XKB_DEFAULT_LAYOUT = 'us'
+#     XDG_SESSION_CLASS = 'user'
+#     TERM = 'xterm-256color'
+#     LESSOPEN = '||/usr/bin/lesspipe.sh %s'
+#     USER = 'rleddy'
+#     COLORFGBG = '15;0'
+#     QT_WAYLAND_RECONNECT = '1'
+#     KDE_SESSION_VERSION = '6'
+#     PAM_KWALLET5_LOGIN = '/run/user/1000/kwallet5.socket'
+#     DISPLAY = ':0'
+#     SHLVL = '1'
+#     XDG_VTNR = '2'
+#     XDG_SESSION_ID = '2'
+#     VIRTUAL_ENV_PROMPT = 'bomb1'
+#     XDG_RUNTIME_DIR = '/run/user/1000'
+#     PS1 = ('(bomb1) '
+ '${PROMPT_START@P}\\[\\e[${PROMPT_COLOR}${PROMPT_HIGHLIGHT:+;$PROMPT_HIGHLIGHT}m\\]${PROMPT_USERHOST@P}\\[\\e[0m\\]${PROMPT_SEPARATOR@P}\\[\\e[${PROMPT_DIR_COLOR-${PROMPT_COLOR}}${PROMPT_HIGHLIGHT:+;$PROMPT_HIGHLIGHT}m\\]${PROMPT_DIRECTORY@P}\\[\\e[0m\\]${PROMPT_END@P}\\$\\[\\e[0m\\] ')
+#     DEBUGINFOD_URLS = 'https://debuginfod.fedoraproject.org/ '
+#     DEBUGINFOD_IMA_CERT_PATH = '/etc/keys/ima:'
+#     KDEDIRS = '/usr'
+#     JOURNAL_STREAM = '9:23088'
+#     XDG_DATA_DIRS = '/home/rleddy/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'
+#     KDE_FULL_SESSION = 'true'
+#     PATH = '/home/rleddy/.buildozer/android/platform/apache-ant-1.9.4/bin:/home/rleddy/PycharmProjects/bomb1/.venv/bin:/home/rleddy/.local/bin:/home/rleddy/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin'
+#     DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
+#     KDE_APPLICATIONS_AS_SCOPE = '1'
+#     MAIL = '/var/spool/mail/rleddy'
+#     KONSOLE_DBUS_WINDOW = '/Windows/1'
+#     _ = '/home/rleddy/.local/bin/buildozer'
+#     PACKAGES_PATH = '/home/rleddy/.buildozer/android/packages'
+#     ANDROIDSDK = '/home/rleddy/.buildozer/android/platform/android-sdk'
+#     ANDROIDNDK = '/home/rleddy/.buildozer/android/platform/android-ndk-r25b'
+#     ANDROIDAPI = '31'
+#     ANDROIDMINAPI = '21'
+# 
+# Buildozer failed to execute the last command
+# The error might be hidden in the log above this error
+# Please read the full log, and search for it before
+# raising an issue with buildozer itself.
+# In case of a bug report, please add a full log with log_level = 2

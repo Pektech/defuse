@@ -1,0 +1,47 @@
+<WireForm>:
+    orientation: "vertical"
+    padding: 30
+    spacing: 15
+
+    Spinner:
+        id: red_spinner
+        text: "Select Red Wire"
+        values: ["loose", "frayed", "good", "scorched"]
+        background_color: 1, 0, 0, 1  # Red RGBA
+        color: 1, 1, 1, 1  # White text
+
+    Spinner:
+        id: blue_spinner
+        text: "Select Blue Wire"
+        values: ["loose", "frayed", "good", "scorched"]
+        background_color: 0.1, 0.4, 1, 1  # Blue
+        color: 1, 1, 1, 1
+
+    Spinner:
+        id: yellow_spinner
+        text: "Select Yellow Wire"
+        values: ["loose", "frayed", "good", "scorched"]
+        background_color: 1, 1, 0.2, 1  # Yellow
+        color: 0, 0, 0, 1  # Black text
+
+    Spinner:
+        id: black_spinner
+        text: "Select Black Wire"
+        values: ["loose", "frayed", "good", "scorched"]
+        background_color: 0.1, 0.1, 0.1, 1  # Dark gray-black
+        color: 1, 1, 1, 1
+
+    Button:
+        text: "Defuse Bomb"
+        size_hint_y: None
+        height: 50
+        on_press: root.defuse()
+
+    Label:
+        id: result_label
+        text: "Enter wire conditions above."
+        size_hint_y: None
+        height: 80
+        halign: "center"
+        valign: "middle"
+        text_size: self.width, None

@@ -1,0 +1,7 @@
+certifi
+chardet
+filetype
+idna
+pyjnius@git+https://github.com/kivy/pyjnius.git@master#egg=pyjnius
+requests
+urllib3
